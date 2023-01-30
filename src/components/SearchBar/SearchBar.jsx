@@ -1,29 +1,37 @@
 import React from 'react'
 import { getSearchCity } from '../../services/api'
+import './SearchBar.css'
 
-function SearchBar({setSearchResult}) {
+
+
+
+
+
+function SearchBar(props) {
+  const {setCities,setTitle} = props
   const handleSubmit = async (e)=>{
+    const searchInput = document.getElementById('searchInput')
     e.preventDefault()
-    const resultArray = await getSearchCity(document.getElementById('search').value)
-    if (resultArray.length>1) setSearchResult(resultArray)
+    const resultArray = await getSearchCity(searchInput.value)
+    if (resultArray.length>0){
+      let cities=[]
+      for (let i = 0; i < resultArray.length; i++) {
+        cities.push(resultArray[i].name)
+        
+      }
+      setCities(cities)
+      setTitle(`Results of "${searchInput.value}"`)
+    }
   }
 
-  // const handleSearchChange = (e)=>{
-  //   if (e.target.value){
-  //   const resultArray = getSearchCity(e.target.value)
-  //   if (resultArray.length>1)setSearchResult(resultArray)
-  //   }
-  // }
+
 
   return (
-    <div>
-      <h3>SearchBar</h3>
-      <form className='search' onSubmit={handleSubmit}>
-        <input className='search-input' id='search' type="text"
-        />
-      <button className='search-button'>Search</button>
-      </form>
-      </div>
+    <form className='search' onSubmit={handleSubmit}>
+      <input className='search-input' id='searchInput' type='text'  placeholder='Search' required/>
+      <button className='search-button' id='searchBtn'><i className='material-icons'>arrow_forward</i></button>
+    </form>
+
   )
 }
 

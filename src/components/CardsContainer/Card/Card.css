@@ -1,0 +1,14 @@
+.card{  
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 178.64px;
+}
+.card .card-title{
+  margin: 12px;
+  font-size: 24px;
+  font-weight: 300;
+}
+.card .card-content{
+  padding: 0px 24px 12px 24px;
+  border-radius: 0 0 2px 2px;
+}

@@ -1,10 +1,11 @@
 import axios from "axios";
 
+
 export const api = axios.create({
   baseURL:'https://weatherapi-com.p.rapidapi.com',
   headers: {
-    'X-RapidAPI-Key': '2f73bd92a0msha2e99332d777f3fp102319jsnded4870e0217',
-    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+    'X-RapidAPI-Key':process.env.REACT_APP_RAPIDAPIAPI_KEY,
+    'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST
   }
 }) 
 export const getCurrentWeather = async (city)=>{
