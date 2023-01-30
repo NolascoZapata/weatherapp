@@ -12,9 +12,6 @@
 .search .search-input::placeholder{
   color: #fff;
 }
-.search .search-input :hover{
-  color: red !important
-}
 .search .search-button {
   background-color: transparent ;
   border: none ;
