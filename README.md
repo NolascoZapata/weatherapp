@@ -1,6 +1,8 @@
 ## WeatherApp
 
-    WeatherApp es una app para la consulta del clima en diferentes. Esta compuesto por:
+    WeatherApp es una app para la consulta del clima actual en diferentes ciudades del mundo. Esta compuesto por:
+    -Un buscador al cual se puede ingresar el nombre parcial o completo de una ciudad.
+    -Contenedor de tarjetas que representan las ciudades encontradas.   
 
 ## Instalación
 
